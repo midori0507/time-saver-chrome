@@ -148,15 +148,19 @@ document.addEventListener('DOMContentLoaded', function() {
     try {
       for (var i=0; i < tabs.length; i++) {
 
-        var li_url = document.createElement('li');
+        var liUrl = document.createElement('li');
 
-        // Take care of currently active tab
+        // Active tab = bold
         if (tabs[i].active == true) {
-          li_url.style.fontWeight = "bold";
+          liUrl.style.fontWeight = "bold";
         }
 
-        li_url.innerHTML = i + ". " + tabs[i].url;
-        listUrls.appendChild(li_url);
+        // Regex to return only domain name
+        var matches = tabs[i].url.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i);
+        var domain = matches && matches[1];  // domain will be null if no match is found
+
+        liUrl.innerHTML = i + ". " + domain;
+        listUrls.appendChild(liUrl);
       }
     }
     catch (e) {
