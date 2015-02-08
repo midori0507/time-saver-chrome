@@ -1,0 +1,2 @@
+- tab behavior
+- dynamic chrome app icon 
