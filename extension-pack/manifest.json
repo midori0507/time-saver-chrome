@@ -1,0 +1,18 @@
+{
+	"manifest_version": 2,
+
+	"name": "HelloWorld!",
+	"description": "From Tutorial -- Hello World extension to show a Google Image search result for the current page.",
+	"version": "1.0",
+
+	"browser_action":{ 
+		"default_icon": "assets/images/icon.png",
+		"default_popup": "popup.html"
+		},
+
+		"permissions": [
+		"tabs",
+		"https://ajax.googleapis.com/"
+		]
+
+}
