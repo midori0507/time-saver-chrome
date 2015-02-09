@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 
-	"name": "Getting started example",
+	"name": "Timesaver",
 	"description": "This extension shows a Google Image search result for the current page",
 	"version": "1.0",
 
@@ -15,7 +15,7 @@
 			},
 			"content_scripts": [{
 				"matches": ["http://*/*"],
-				"js": ["popup.js"]
+				"js": ["jquery.js"]
 			}
 			],
 			"permissions": [
