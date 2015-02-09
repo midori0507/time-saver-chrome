@@ -20,6 +20,11 @@ chrome.tabs.onUpdated.addListener(function(tabId,tab,changeInfo){
 		console.log(tablist);
 	}
 });
+chrome.runtime.onMessage.addListener(function(request,sender,sendResponse){
+			if(request.message=='getdata'){
+				sendResponse({data:tablist});
+			}
+		});
 function getUptime (tablist){
 	if(tablist.length>=2)
 	{
